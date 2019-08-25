@@ -1,14 +1,19 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import seedColors from "./components/data/seedColors";
+import seedPalettes from "./components/data/seedPalettes";
 import Palette from "./components/palette/Palette.component";
+import PaletteList from "./components/palette-list/PaletteList.component";
 import { generatePalette, findPalette } from "./components/helpers/colorhelper";
 
 function App() {
-  // console.log(generatePalette(seedColors[4]));
+  // console.log(generatePalette(seedPalettes[4]));
   return (
     <Switch>
-      <Route exact path="/" render={() => <h1>Mini Palette Home Page</h1>} />
+      <Route
+        exact
+        path="/"
+        render={() => <PaletteList palettes={seedPalettes} />}
+      />
       <Route
         exact
         path="/palette/:id"
@@ -20,7 +25,7 @@ function App() {
       />
     </Switch>
     // {/* <div className="App">
-    //   <Palette {...generatePalette(seedColors[{findPalette(routeProps.match.params.id)}])} />
+    //   <Palette {...generatePalette(seedPalettes[4])} />
     // </div> */}
   );
 }
