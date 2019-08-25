@@ -21,7 +21,7 @@ export default class ColorBox extends Component {
   }
 
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     const { hex, name, format } = this.props;
     return (
       <CopyToClipboard text={this.props[format]} onCopy={this.handleCopy}>
